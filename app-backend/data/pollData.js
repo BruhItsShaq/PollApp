@@ -56,5 +56,5 @@ const pollData = [
         }
       ]
     }
-  ];
-  
+  ]
+  module.exports = pollData;
