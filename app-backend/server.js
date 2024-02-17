@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
+const router = require('./router'); // Import router module
 const PORT = process.env.PORT || 3000;
 
-// Define routes
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
+
+
+app.use(express.json());
+app.use(router);
+
+
 
 // Start the server
 app.listen(PORT, () => {
