@@ -10,5 +10,4 @@ const pollModel = {
         }
     ]
 };
-
 module.exports = pollModel;
