@@ -17,24 +17,32 @@ export const fetchPollData = async () => {
 
 //Function to post the votes
 export const submitVote = async (pollId, optionId) => {
-    try{
+    try {
+        console.log('Submitting vote for pollId:', pollId, 'and optionId:', optionId);
+
         const response = await fetch(`${URL}/polls/${pollId}/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({optionId}),
+            body: JSON.stringify({ optionId }),
         });
-        if (!response.ok){
+
+        console.log('Response from server:', response);
+
+        if (!response.ok) {
+            console.error('Failed to submit vote');
             throw new Error('Failed to submit vote');
         }
-        return await response.text();
-    } catch (error){
+
+        const data = await response.text();
+        console.log('Data received:', data);
+        return data;
+    } catch (error) {
         console.error('Error submitting the vote', error);
         throw error;
     }
 };
-
 //Function to get the votes once submitted
 export const getVotes = async (pollId) => {
     try{

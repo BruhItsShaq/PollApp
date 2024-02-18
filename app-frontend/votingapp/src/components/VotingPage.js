@@ -32,14 +32,14 @@ const VotingPage = () => {
     }
 
     //Function to handle votes submitted
-    const handleVote = async (optionId) => {
+    const handleVote = async () => {
         //Checks to see if option been selected
         if (!selectedOptionId) {
             alert('Please select an option before submitting!');
             return;
         }
         try {
-            await submitVote(poll.pollId, optionId);
+            await submitVote(poll.pollId, selectedOptionId);
             alert('Vote has been submitted successfully');
         } catch (error) {
             console.error('Error whilst submitting vote', error);
