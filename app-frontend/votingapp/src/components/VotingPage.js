@@ -61,7 +61,7 @@ const VotingPage = () => {
                 <div className='options'>
                     {poll.options.map((option) =>
                         <button key={option.optionId}
-                            onClick={() => handleVote(option.optionId)}
+                            onClick={() => HandleOptionSelect(option.optionId)}
                             className={`optionButton ${selectedOptionId === option.optionId ? "selected" : ""}`}
                         >
                             {option.optionText}
