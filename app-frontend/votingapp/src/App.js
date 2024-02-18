@@ -1,4 +1,4 @@
-import VotingPage from "./components/VotingPage";
+import VotingPage from ".//components/VotingPage";
 
 function App() {
   return (

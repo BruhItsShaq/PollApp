@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { fetchPollData, submitVote } from './services/pollApi';
+import { fetchPollData, submitVote } from '../services/pollAPI';
 import './styling.css';
-import logo from './assets/assets/logo.jpg';
-import background from './assets/assets/background.jpg';
+import logo from '../assets/assets/logo.png';
+import background from '../assets/assets/background.jpg';
 
 const VotingPage = () => {
     //States to store poll data, selected option ID and to check if button is disabled
