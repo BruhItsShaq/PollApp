@@ -53,9 +53,9 @@ const VotingPage = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container' style={{ backgroundImage: `url(${background})` }}>
             <img src={logo} alt="Dizplai" className='logo' />
-            <div style={{ backgroundImage: `url(${background})` }}>
+            <div className='content'>
                 <h1 className='title'>{poll.pollName}</h1>
                 <p className='question'>{poll.question}</p>
                 <div className='options'>
