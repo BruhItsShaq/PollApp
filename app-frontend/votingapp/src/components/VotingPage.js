@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { fetchPollData, submitVote } from '../services/pollAPI';
 import './styling.css';
 import logo from '../assets/assets/logo.png';
 import background from '../assets/assets/background.jpg';
 
-const VotingPage = () => {
+const VotingPage = ({ pollId }) => {
     //States to store poll data, selected option ID and to check if button is disabled
     const [poll, setPoll] = useState(null);
     const [selectedOptionId, setSelectedOptionId] = useState(null);
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -41,6 +43,7 @@ const VotingPage = () => {
         try {
             await submitVote(poll.pollId, selectedOptionId);
             alert('Vote has been submitted successfully');
+            history.push('/confirmation');
         } catch (error) {
             console.error('Error whilst submitting vote', error);
             alert('Failed to submit vote');
