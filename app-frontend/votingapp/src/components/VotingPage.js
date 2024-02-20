@@ -42,11 +42,9 @@ const VotingPage = ({ pollId }) => {
         }
         try {
             await submitVote(poll.pollId, selectedOptionId);
-            alert('Vote has been submitted successfully');
             navigate('/confirmation');
         } catch (error) {
             console.error('Error whilst submitting vote', error);
-            alert('Failed to submit vote');
         }
     }
 
