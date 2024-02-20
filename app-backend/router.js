@@ -54,7 +54,7 @@ router.post('/polls/:id/vote', (req, res) => {
     res.send('Vote submitted successfully');
 });
 
-//Route for getting polls by their ID
+//Route for getting poll votes by their ID
 router.get('/polls/:id/votes', (req, res) => {
     const { id } = req.params;
     const poll = pollData.find(poll => poll.pollId === parseInt(id));
@@ -70,8 +70,8 @@ router.get('/polls/:id/votes', (req, res) => {
     poll.options.forEach(option => {
         votesForPoll[option.optionId] = votes[id]?.[option.optionId] || 0;
     });
-    
-    res.json(pollVotes);
+
+    res.json(votesForPoll);
 });
 
 module.exports = router;
