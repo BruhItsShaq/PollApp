@@ -7,13 +7,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 150vh;
+    height: 100vh;
 }
 
 .logo {
     width: 200px;
     height: auto;
-    margin-bottom: 20px;
 }
 
 .content {
@@ -25,12 +24,12 @@
 .title {
     color: #996BF9;
     font-family: 'Outfit', sans-serif;
-    font-size: 6vw;
+    font-size: 36px;
 }
 
 .question {
     color: #f4f1f1;
-    font-size: 5vw;
+    font-size: 24px;
 }
 
 .options {
@@ -41,13 +40,13 @@
 }
 
 .optionButton {
-    width: 60%;
-    font-size: 4vw; 
-    background-color: rgba(153, 107, 249, 0.4);
+    width: 100%;
+    font-size: 12px; 
+    background-color: rgba(152, 107, 249, 0.373);
     color: #FFF;
     border: 1px solid #f4f4f4;
-    padding: 2vw;
-    margin: 1.5vh;
+    padding: 20px;
+    margin: 15px;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
     border-radius: 5px;
@@ -58,7 +57,7 @@
 }
 
 .optionButton:hover {
-    background-color: rgba(127, 74, 210, 1);
+    background-color: rgba(255, 255, 255, 0.386);
 }
 
 .optionButton.selected {
@@ -67,15 +66,19 @@
 
 .submitButton {
     width: 60%;
-    font-size: 4vw;
+    font-size: 18px;
     background-color: #996BF9;
     color: #FFF;
     border: 1px solid #8C8C8C;
-    padding: 2vw; 
-    margin-top: 20px;
+    padding: 5px; 
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
     border-radius: 5px;
+}
+
+.submitButton:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* Media queries for different screen sizes */
@@ -97,6 +100,6 @@
 @media screen and (min-width: 1200px) {
     .optionButton,
     .submitButton {
-        width: 50%; 
+        width: 60%; 
     }
 }
