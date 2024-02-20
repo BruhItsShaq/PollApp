@@ -5,7 +5,7 @@ import logo from '../assets/assets/logo.png';
 import background from '../assets/assets/background.jpg';
 
 const ConfirmationPage = ({ pollId }) => { //Accept pollId as a prop
-    const { votes, setVotes } = useState([]);
+    const [ votes, setVotes ] = useState([]);
 
     useEffect(() => {
         //Fetch votes from the server

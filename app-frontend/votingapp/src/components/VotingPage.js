@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchPollData, submitVote } from '../services/pollAPI';
 import './styling.css';
 import logo from '../assets/assets/logo.png';
@@ -10,7 +10,7 @@ const VotingPage = ({ pollId }) => {
     const [poll, setPoll] = useState(null);
     const [selectedOptionId, setSelectedOptionId] = useState(null);
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-    const history = useHistory();
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -43,7 +43,7 @@ const VotingPage = ({ pollId }) => {
         try {
             await submitVote(poll.pollId, selectedOptionId);
             alert('Vote has been submitted successfully');
-            history.push('/confirmation');
+            navigate('/confirmation');
         } catch (error) {
             console.error('Error whilst submitting vote', error);
             alert('Failed to submit vote');
